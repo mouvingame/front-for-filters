@@ -44,8 +44,6 @@
         </v-col>
       </v-row>
 
-      "{{ name }}"
-
       <template v-for="(criterion, index) in criteria">
         <NewCriterion
             :key="criterion.id"
@@ -57,8 +55,6 @@
             @remove="criteria.splice(index, 1)"
         />
       </template>
-
-      {{ criteria }}
 
       <v-row
           justify="center"
@@ -105,7 +101,6 @@
           </v-radio-group>
         </v-col>
       </v-row>
-      {{ selection }}
     </v-card-text>
     <v-card-actions
         class="grey lighten-3 justify-center"
@@ -255,7 +250,7 @@ export default {
 
     close() {
       this.name = '';
-      this.$refs.name.resetValidation()
+      this.$refs.name.resetValidation();
       this.criterionId = 0;
       this.criteria = [];
       this.selection = 1;
